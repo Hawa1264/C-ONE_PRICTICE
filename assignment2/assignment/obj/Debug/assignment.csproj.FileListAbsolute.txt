@@ -1,0 +1,10 @@
+C:\c#\assignment\assignment\obj\Debug\assignment.csproj.AssemblyReference.cache
+C:\c#\assignment\assignment\obj\Debug\assignment.Form1.resources
+C:\c#\assignment\assignment\obj\Debug\assignment.Properties.Resources.resources
+C:\c#\assignment\assignment\obj\Debug\assignment.csproj.GenerateResource.cache
+C:\c#\assignment\assignment\obj\Debug\assignment.csproj.CoreCompileInputs.cache
+C:\c#\assignment2\assignment\obj\Debug\assignment.csproj.AssemblyReference.cache
+C:\c#\assignment2\assignment\obj\Debug\assignment.Form1.resources
+C:\c#\assignment2\assignment\obj\Debug\assignment.Properties.Resources.resources
+C:\c#\assignment2\assignment\obj\Debug\assignment.csproj.GenerateResource.cache
+C:\c#\assignment2\assignment\obj\Debug\assignment.csproj.CoreCompileInputs.cache
