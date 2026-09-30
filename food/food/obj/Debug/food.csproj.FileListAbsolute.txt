@@ -1,0 +1,10 @@
+C:\c#\food\food\bin\Debug\food.exe.config
+C:\c#\food\food\bin\Debug\food.exe
+C:\c#\food\food\bin\Debug\food.pdb
+C:\c#\food\food\obj\Debug\food.csproj.AssemblyReference.cache
+C:\c#\food\food\obj\Debug\food.Form1.resources
+C:\c#\food\food\obj\Debug\food.Properties.Resources.resources
+C:\c#\food\food\obj\Debug\food.csproj.GenerateResource.cache
+C:\c#\food\food\obj\Debug\food.csproj.CoreCompileInputs.cache
+C:\c#\food\food\obj\Debug\food.exe
+C:\c#\food\food\obj\Debug\food.pdb
