@@ -72,7 +72,9 @@ namespace food
 
             }
             catch (Exception ex)
+
             {
+                MessageBox.Show(ex.Message);
             }
         }
 

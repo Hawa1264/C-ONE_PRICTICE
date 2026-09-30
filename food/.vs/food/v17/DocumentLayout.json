@@ -26,17 +26,13 @@
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\c#\\food\\food\\Form1.cs",
               "RelativeDocumentMoniker": "food\\Form1.cs",
-              "ToolTip": "C:\\c#\\food\\food\\Form1.cs*",
-              "RelativeToolTip": "food\\Form1.cs*",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAwD8AAAAdAAAAAAAAAA==",
+              "ToolTip": "C:\\c#\\food\\food\\Form1.cs",
+              "RelativeToolTip": "food\\Form1.cs",
+              "ViewState": "AgIAADYAAAAAbxzHUWgPwEwAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-30T13:18:53.472Z",
               "IsPinned": true,
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -44,8 +40,8 @@
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\c#\\food\\food\\Form1.cs",
               "RelativeDocumentMoniker": "food\\Form1.cs",
-              "ToolTip": "C:\\c#\\food\\food\\Form1.cs [Design]*",
-              "RelativeToolTip": "food\\Form1.cs [Design]*",
+              "ToolTip": "C:\\c#\\food\\food\\Form1.cs [Design]",
+              "RelativeToolTip": "food\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-30T13:17:15.461Z",
               "EditorCaption": " [Design]"
