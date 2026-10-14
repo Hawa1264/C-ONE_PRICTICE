@@ -1,0 +1,11 @@
+C:\c#\Parrel_with_overtime\Parrel_with_overtime\bin\Debug\Parrel_with_overtime.exe.config
+C:\c#\Parrel_with_overtime\Parrel_with_overtime\bin\Debug\Parrel_with_overtime.exe
+C:\c#\Parrel_with_overtime\Parrel_with_overtime\bin\Debug\Parrel_with_overtime.pdb
+C:\c#\Parrel_with_overtime\Parrel_with_overtime\obj\Debug\Parrel_with_overtime.csproj.AssemblyReference.cache
+C:\c#\Parrel_with_overtime\Parrel_with_overtime\obj\Debug\Parrel_with_overtime.Form1.resources
+C:\c#\Parrel_with_overtime\Parrel_with_overtime\obj\Debug\Parrel_with_overtime.Properties.Resources.resources
+C:\c#\Parrel_with_overtime\Parrel_with_overtime\obj\Debug\Parrel_with_overtime.csproj.GenerateResource.cache
+C:\c#\Parrel_with_overtime\Parrel_with_overtime\obj\Debug\Parrel_with_overtime.csproj.CoreCompileInputs.cache
+C:\c#\Parrel_with_overtime\Parrel_with_overtime\obj\Debug\Parrel_with_overtime.exe
+C:\c#\Parrel_with_overtime\Parrel_with_overtime\obj\Debug\Parrel_with_overtime.pdb
+C:\c#\Parrel_with_overtime\Parrel_with_overtime\obj\Debug\Parrel_with_overtime.exe.config
