@@ -1,0 +1,11 @@
+C:\c#\Radio_button_check_box\Radio_button_check_box\obj\Debug\Radio_button_check_box.csproj.AssemblyReference.cache
+C:\c#\Radio_button_check_box\Radio_button_check_box\obj\Debug\Radio_button_check_box.Form1.resources
+C:\c#\Radio_button_check_box\Radio_button_check_box\obj\Debug\Radio_button_check_box.Properties.Resources.resources
+C:\c#\Radio_button_check_box\Radio_button_check_box\obj\Debug\Radio_button_check_box.csproj.GenerateResource.cache
+C:\c#\Radio_button_check_box\Radio_button_check_box\obj\Debug\Radio_button_check_box.csproj.CoreCompileInputs.cache
+C:\c#\Radio_button_check_box\Radio_button_check_box\bin\Debug\Radio_button_check_box.exe.config
+C:\c#\Radio_button_check_box\Radio_button_check_box\bin\Debug\Radio_button_check_box.exe
+C:\c#\Radio_button_check_box\Radio_button_check_box\bin\Debug\Radio_button_check_box.pdb
+C:\c#\Radio_button_check_box\Radio_button_check_box\obj\Debug\Radio_button_check_box.exe
+C:\c#\Radio_button_check_box\Radio_button_check_box\obj\Debug\Radio_button_check_box.pdb
+C:\c#\Radio_button_check_box\Radio_button_check_box\obj\Debug\Radio_button_check_box.exe.config
