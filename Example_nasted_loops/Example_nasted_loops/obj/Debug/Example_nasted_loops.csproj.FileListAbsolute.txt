@@ -1,0 +1,11 @@
+C:\c#\Example_nasted_loops\Example_nasted_loops\bin\Debug\Example_nasted_loops.exe.config
+C:\c#\Example_nasted_loops\Example_nasted_loops\bin\Debug\Example_nasted_loops.exe
+C:\c#\Example_nasted_loops\Example_nasted_loops\bin\Debug\Example_nasted_loops.pdb
+C:\c#\Example_nasted_loops\Example_nasted_loops\obj\Debug\Example_nasted_loops.csproj.AssemblyReference.cache
+C:\c#\Example_nasted_loops\Example_nasted_loops\obj\Debug\Example_nasted_loops.Form1.resources
+C:\c#\Example_nasted_loops\Example_nasted_loops\obj\Debug\Example_nasted_loops.Properties.Resources.resources
+C:\c#\Example_nasted_loops\Example_nasted_loops\obj\Debug\Example_nasted_loops.csproj.GenerateResource.cache
+C:\c#\Example_nasted_loops\Example_nasted_loops\obj\Debug\Example_nasted_loops.csproj.CoreCompileInputs.cache
+C:\c#\Example_nasted_loops\Example_nasted_loops\obj\Debug\Example_nasted_loops.exe
+C:\c#\Example_nasted_loops\Example_nasted_loops\obj\Debug\Example_nasted_loops.pdb
+C:\c#\Example_nasted_loops\Example_nasted_loops\obj\Debug\Example_nasted_loops.exe.config
