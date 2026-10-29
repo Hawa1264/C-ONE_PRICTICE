@@ -8,4 +8,3 @@ C:\c#\Assignmet_files\Assignmet_files\obj\Debug\Assignmet_files.csproj.GenerateR
 C:\c#\Assignmet_files\Assignmet_files\obj\Debug\Assignmet_files.csproj.CoreCompileInputs.cache
 C:\c#\Assignmet_files\Assignmet_files\obj\Debug\Assignmet_files.exe
 C:\c#\Assignmet_files\Assignmet_files\obj\Debug\Assignmet_files.pdb
-C:\c#\Assignmet_files\Assignmet_files\obj\Debug\Assignmet_files.exe.config
