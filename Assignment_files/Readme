@@ -8,7 +8,7 @@ Reads a text file line by line. It returns each line as a string.
 ### StreamReader.ReadBlock()
 Reads a specific number of characters from a file into a character array.
 
-### FileStream.Read()
+### FileStream.d()
 Reads bytes from a file into a byte array.
 
 ### File.ReadAllBytes()
