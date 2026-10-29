@@ -1,0 +1,10 @@
+C:\c#\Readline\Readline\bin\Debug\Readline.exe.config
+C:\c#\Readline\Readline\bin\Debug\Readline.exe
+C:\c#\Readline\Readline\bin\Debug\Readline.pdb
+C:\c#\Readline\Readline\obj\Debug\Readline.csproj.AssemblyReference.cache
+C:\c#\Readline\Readline\obj\Debug\Readline.Form1.resources
+C:\c#\Readline\Readline\obj\Debug\Readline.Properties.Resources.resources
+C:\c#\Readline\Readline\obj\Debug\Readline.csproj.GenerateResource.cache
+C:\c#\Readline\Readline\obj\Debug\Readline.csproj.CoreCompileInputs.cache
+C:\c#\Readline\Readline\obj\Debug\Readline.exe
+C:\c#\Readline\Readline\obj\Debug\Readline.pdb
