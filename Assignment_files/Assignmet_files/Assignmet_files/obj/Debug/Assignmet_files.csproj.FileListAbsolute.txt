@@ -1,0 +1,11 @@
+C:\c#\Assignmet_files\Assignmet_files\bin\Debug\Assignmet_files.exe.config
+C:\c#\Assignmet_files\Assignmet_files\bin\Debug\Assignmet_files.exe
+C:\c#\Assignmet_files\Assignmet_files\bin\Debug\Assignmet_files.pdb
+C:\c#\Assignmet_files\Assignmet_files\obj\Debug\Assignmet_files.csproj.AssemblyReference.cache
+C:\c#\Assignmet_files\Assignmet_files\obj\Debug\Assignmet_files.Form1.resources
+C:\c#\Assignmet_files\Assignmet_files\obj\Debug\Assignmet_files.Properties.Resources.resources
+C:\c#\Assignmet_files\Assignmet_files\obj\Debug\Assignmet_files.csproj.GenerateResource.cache
+C:\c#\Assignmet_files\Assignmet_files\obj\Debug\Assignmet_files.csproj.CoreCompileInputs.cache
+C:\c#\Assignmet_files\Assignmet_files\obj\Debug\Assignmet_files.exe
+C:\c#\Assignmet_files\Assignmet_files\obj\Debug\Assignmet_files.pdb
+C:\c#\Assignmet_files\Assignmet_files\obj\Debug\Assignmet_files.exe.config

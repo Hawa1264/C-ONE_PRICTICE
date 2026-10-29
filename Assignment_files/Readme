@@ -1,0 +1,46 @@
+# C# Additional File Functions
+
+## 1.  Other function using Reading Files
+
+### File.ReadLines()
+Reads a text file line by line. It returns each line as a string.
+
+### StreamReader.ReadBlock()
+Reads a specific number of characters from a file into a character array.
+
+### FileStream.Read()
+Reads bytes from a file into a byte array.
+
+### File.ReadAllBytes()
+Reads all the contents of a file as bytes. It is useful for binary files such as images and other files.
+
+## 2. Deleting Files
+
+### File.Delete()
+Deletes a file using its file path.
+
+### FileInfo.Delete()
+Deletes a file using a FileInfo object.
+
+### Directory.Delete()
+Deletes a directory or folder. Using recursive: true deletes the folder and everything inside it.
+
+Warning: Be careful when deleting files and folders because deleted data may not be recoverable.
+
+## 3. Creating and Writing Files
+
+### File.WriteAllText()
+Creates a new text file and writes text into it. If the file already exists, its previous contents are replaced.
+
+### File.AppendAllText()
+Adds new text to the end of a file. If the file does not exist, it creates a new file.
+
+## Summary
+
+Reading functions are used to retrieve information from files.
+
+Deleting functions are used to remove files and folders.
+
+Creating and writing functions are used to create files and save text.
+
+These are additional C# file functions that can be studied separately from the functions covered in the class notes.
