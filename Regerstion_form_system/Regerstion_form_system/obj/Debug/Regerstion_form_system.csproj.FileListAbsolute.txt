@@ -1,0 +1,11 @@
+C:\c#\Regerstion_form_system\Regerstion_form_system\bin\Debug\Regerstion_form_system.exe.config
+C:\c#\Regerstion_form_system\Regerstion_form_system\bin\Debug\Regerstion_form_system.exe
+C:\c#\Regerstion_form_system\Regerstion_form_system\bin\Debug\Regerstion_form_system.pdb
+C:\c#\Regerstion_form_system\Regerstion_form_system\obj\Debug\Regerstion_form_system.csproj.AssemblyReference.cache
+C:\c#\Regerstion_form_system\Regerstion_form_system\obj\Debug\Regerstion_form_system.Form1.resources
+C:\c#\Regerstion_form_system\Regerstion_form_system\obj\Debug\Regerstion_form_system.Properties.Resources.resources
+C:\c#\Regerstion_form_system\Regerstion_form_system\obj\Debug\Regerstion_form_system.csproj.GenerateResource.cache
+C:\c#\Regerstion_form_system\Regerstion_form_system\obj\Debug\Regerstion_form_system.csproj.CoreCompileInputs.cache
+C:\c#\Regerstion_form_system\Regerstion_form_system\obj\Debug\Regerstion_form_system.exe
+C:\c#\Regerstion_form_system\Regerstion_form_system\obj\Debug\Regerstion_form_system.pdb
+C:\c#\Regerstion_form_system\Regerstion_form_system\obj\Debug\Regerstion_form_system.exe.config
