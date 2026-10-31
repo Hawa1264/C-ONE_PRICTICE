@@ -1,228 +1,102 @@
 # Chapter 2 – Processing Data (C#)
 
+
+
 ## Integer Division
-Integer division removes the decimal part.
-
-```csharp
-int x = 7, y = 3;
-MessageBox.Show((x / y).ToString()); // 2
-```
-
-Use `double` to get decimals: `7.0 / 3 = 2.3333`.
+When both numbers are integers, C# divides them and throws away the decimal part. For example, 7 / 3 gives 2, not 2.33. To keep the decimals, at least one of the numbers must be a `double`, so 7.0 / 3 gives 2.3333.
 
 ## Numeric Input
-Use `Parse()` to convert TextBox text into a number.
+Text typed into a TextBox is always a string, even if it looks like a number. You cannot calculate with a string, so you must convert it first using `Parse()`:
+- `int.Parse()` for whole numbers (age, quantity).
+- `double.Parse()` for numbers with decimals (price, distance).
+- `decimal.Parse()` for money values (salary), where accuracy matters.
 
-```csharp
-int age = int.Parse(ageTextBox.Text);
-double price = double.Parse(priceTextBox.Text);
-decimal salary = decimal.Parse(salaryTextBox.Text);
-```
-
-### Numeric Input Example
-Read a value and convert it before calculating.
-
-```csharp
-double distance = double.Parse(distanceTextBox.Text);
-```
+Always read the value and convert it before doing any calculation.
 
 ## Displaying Numbers
-Use `ToString()` to display numeric values.
+A Label or TextBox shows text, so a number must be converted back to a string with `ToString()` before it is displayed.
 
-```csharp
-int number = 123;
-resultLabel.Text = number.ToString();
-```
+**Remember:** `Parse()` = text to number; `ToString()` = number to text.
 
-**Remember:** `Parse()` = text to number; `ToString()` = value to text.
-
-## Home Assignment
-- Read input from TextBoxes.
-- Convert input using `Parse()`.
-- Calculate the result.
-- Display using `ToString()`.
+## Typical Program Steps (Home Assignment)
+1. Read the input from the TextBoxes.
+2. Convert it with `Parse()`.
+3. Calculate the result.
+4. Convert the result with `ToString()` and display it.
 
 ## Number Formatting
+`ToString()` can take a format code to control how the number looks:
+- `"N"`: number with thousands separators (1,234.50).
+- `"F2"`: fixed, exactly two decimal places (12.3 becomes 12.30). The number after F sets how many decimals.
+- `"E"`: scientific notation, for very large or small numbers.
+- `"C"`: currency, adds the currency symbol (like $12.30).
+- `"P"`: percentage; the value is multiplied by 100, so 0.23 shows as 23%.
 
-| Format | Meaning |
-|---|---|
-| `"N"` | Number |
-| `"F2"` | Two decimal places |
-| `"E"` | Scientific notation |
-| `"C"` | Currency |
-| `"P"` | Percentage |
-
-```csharp
-double amount = 12.3;
-amount.ToString("F2"); // 12.30
-```
-
-### Formatting Practice
-```csharp
-double rate = 0.23;
-resultLabel.Text = rate.ToString("P"); // Percentage
-```
-
-Practice `"N"`, `"F2"`, `"C"`, and `"P"`.
+Practice with `"N"`, `"F2"`, `"C"`, and `"P"`.
 
 ## Exceptions
-An exception is an error that occurs while a program runs, such as invalid numeric input.
+An exception is an error that happens while the program is running. A common cause is invalid input, such as typing "hello" where a number is expected. If nothing handles it, the program crashes.
+
+- **Throwing:** the moment the error is raised (for example, `Parse()` fails on bad text).
+- **Catching:** the program handles the error so it does not crash.
 
 ### Try-Catch
-Use `try-catch` to handle errors.
-
-```csharp
-try
-{
-    int n = int.Parse(numberTextBox.Text);
-}
-catch
-{
-    MessageBox.Show("Invalid input!");
-}
-```
-
-- `try`: code that may fail.
-- `catch`: handles the error.
-
-### Throwing an Exception
-Invalid input can cause an exception.
-
-```csharp
-double miles = double.Parse(milesTextBox.Text);
-```
-
-Entering `"hello"` causes parsing to fail.
-
-### Throwing vs. Catching
-- **Throwing:** an exception is raised.
-- **Catching:** the program handles the exception.
+Put code that might fail inside `try`. If an exception occurs, execution jumps to `catch`, where you can show a friendly message like "Invalid input!". Code after the catch continues normally.
 
 ### Exception Message
-Use `ex.Message` to get the exception's message.
-
-```csharp
-try
-{
-    int n = int.Parse(numberTextBox.Text);
-}
-catch (Exception ex)
-{
-    MessageBox.Show(ex.Message);
-}
-```
-
-### Class Practice and Solution
-Practice reading input, converting values, calculating results, handling exceptions, and displaying output.
+You can catch the exception as an object (`Exception ex`) and use `ex.Message` to show the system's description of what went wrong. This is useful for debugging.
 
 ## Named Constants
-Use `const` for a value that cannot change.
-
-```csharp
-const double INTEREST_RATE = 0.129;
-```
-
-**Exam point:** A constant cannot be reassigned.
+A `const` is a value that never changes while the program runs, such as an interest rate. Naming it makes the code easier to read and means you change it in only one place. By convention, constant names are written in capital letters. **Exam point:** a constant cannot be reassigned.
 
 ## Fields
-A field is declared inside a class but outside its methods.
-
-```csharp
-private string name = "Charles";
-```
-
-Methods in the class can access it.
-
-### FieldDemo
-Multiple event handlers can change the same field.
-
-```csharp
-private string name = "Charles";
-```
-
-Changing `name` in one handler affects its value for other handlers.
+A field is a variable declared inside a class but outside any method. Every method in the class can use it, and it keeps its value between events. This means one event handler can change a field and another handler will see the new value. A variable declared inside a method (a local variable) exists only while that method runs.
 
 ## Math Class
+The `Math` class gives ready-made calculations:
+- `Math.Sqrt(25)`: square root, gives 5.
+- `Math.Pow(2, 3)`: 2 to the power of 3, gives 8.
+- `Math.Max(4, 9)`: the larger value, gives 9.
+- `Math.Min(4, 9)`: the smaller value, gives 4.
+- `Math.Round(4.6)`: rounds to the nearest whole number, gives 5.
+- `Math.PI` and `Math.E`: constants for pi and Euler's number.
 
-| Method | Purpose |
-|---|---|
-| `Math.Sqrt(25)` | Square root: 5 |
-| `Math.Pow(2, 3)` | Power: 8 |
-| `Math.Max(4, 9)` | Largest: 9 |
-| `Math.Min(4, 9)` | Smallest: 4 |
-| `Math.Round(4.6)` | Rounding: 5 |
-| `Math.PI` | Pi constant |
-| `Math.E` | Euler's constant |
+## Form Design
 
-## Tab Order
-Tab order determines which control receives focus when the user presses Tab.
+### Tab Order
+Tab order decides which control gets focus each time the user presses the Tab key. `TabIndex` starts at 0 for the first control. In Visual Studio, choose View → Tab Order and click the controls in the order you want.
 
-`TabIndex` starts at `0`.
+### Focus()
+`Focus()` moves the cursor to a chosen control in code, for example back to a TextBox after an input error so the user can retype.
 
-### Setting Tab Order
-In Visual Studio, select **View → Tab Order**, then click controls in the desired order.
+### Access Keys
+Placing `&` before a letter in a control's text (like `E&xit`) underlines that letter. The user can then press Alt + that letter to activate the control.
 
-## Focus()
-Use `Focus()` to move keyboard focus to a control.
+### Colors
+`BackColor` changes the background color of a control; `ForeColor` changes its text color. Values come from the `Color` class, such as `Color.Black` or `Color.Yellow`.
 
-```csharp
-nameTextBox.Focus();
-```
+### Background Images
+The form's `BackgroundImage` property sets a picture, and the layout setting controls how it is shown:
+- **None:** original size, placed at the top-left.
+- **Tile:** repeats the image to fill the form.
+- **Center:** places the image in the middle at original size.
+- **Stretch:** fills the whole form, but may distort the picture.
+- **Zoom:** fits the form while keeping the correct proportions.
 
-## Access Keys
-Use `&` before a letter to create an access key.
-
-```csharp
-exitButton.Text = "E&xit";
-```
-
-Press **Alt + X** to activate the button.
-
-## Colors
-- `BackColor`: background color.
-- `ForeColor`: text color.
-
-```csharp
-messageLabel.BackColor = Color.Black;
-messageLabel.ForeColor = Color.Yellow;
-```
-
-## Background Images
-`BackgroundImage` sets the form's image.
-
-| Layout | Purpose |
-|---|---|
-| None | Original size |
-| Tile | Repeats the image |
-| Center | Centers the image |
-| Stretch | Fills the form; may distort |
-| Zoom | Fits proportionally |
-
-## GroupBox vs. Panel
-- **GroupBox:** container with a title and border.
-- **Panel:** container without a title; supports border styles.
-
-## Logic Errors
-A logic error occurs when a program runs but produces the wrong result.
-
-Examples: wrong calculation or wrong variable assignment.
+### GroupBox vs. Panel
+Both are containers that group other controls. A **GroupBox** has a title and a border. A **Panel** has no title but supports border styles and can scroll.
 
 ## Debugging
 
-### Breakpoints
-A breakpoint pauses execution at a selected line so you can inspect values and find errors.
+### Logic Errors
+A logic error is when the program runs without crashing but gives the wrong answer, for example using the wrong formula or assigning the wrong variable. The computer cannot detect these, so you must find them by testing.
 
-### Break Mode
-When execution pauses, hover over a variable to inspect its current value.
-
-### Debugging
-Pause the program and inspect its state to find the incorrect statement.
+### Breakpoints and Break Mode
+A breakpoint is a marker on a line of code. When the program reaches it, execution pauses (break mode). While paused, hover over a variable to see its current value and check whether it is what you expect.
 
 ### Locals and Watch Windows
-- **Locals:** shows local variables and their current values.
-- **Watch:** monitors selected variables or expressions.
+- **Locals:** automatically lists the local variables and their current values.
+- **Watch:** lets you pick specific variables or expressions to monitor as you step through.
 
 ### Single-Stepping
-Run the program one statement at a time to find errors.
-
-Use **F11** or **Debug → Step Into**.
+Run the program one statement at a time with F11 or Debug → Step Into. After each step, check the values. The first statement that produces a wrong value is usually where the error is.
