@@ -1,72 +1,47 @@
-## week two
-# Discuss Chapter2
+# Discuss Chapter 2 – Student Record Form
 
-## Topics Covered
-3.1 Reading Input with TextBox Controls
-3.2 A First Look at Variables
-3.3 Numeric Data Type and Variables
-3.4 Performing Calculations
-3.5 Inputting and Outputting Numeric Values
-3.6 Formatting Numbers with the ToString Method
-3.7 Simple Exception Handling
-3.8 Using Named Constants
-3.9 Declaring Variables as Fields
-3.10 Using the Math Class
-3.11 More GUI Details
-3.12 Using the Debugger to Locate Logic Errors
+This practice demonstrates how to:
 
+- Clear multiple TextBox and Label controls at once
+- Close a form using a Button control
+- Parse string input from a TextBox into a numeric variable
 
+---
 
-### 3.1 Reading Input with TextBox Controls
+## 1. Clearing the Form Fields
 
-**TextBox** = rectangular control that accepts keyboard input
-Found in the Toolbox's Common Controls group; 
-double-click to add to form
+In this step, the `Clear` button's Click event resets every input control back to its default (empty) state.
 
-Default name: textBoxN (n = 1, 2, 3...)
-Text property stores the input — always as a string
-Clearing a TextBox: .Text = "", .Text = string.Empty, or .Clear()
+- `txtname.Clear();` empties the name TextBox.
+- `txtstudentid.Clear();` empties the student ID TextBox.
+- `txtdepatment.Clear();` empties the department TextBox.
+- `txtsemester.Clear();` empties the semester TextBox.
+- `lbloutput.Text = string.Empty;` clears the output Label.
 
-#### 3.2 A First Look at Variables (Slides 6–18)
+Note that TextBox controls use the `.Clear()` method, while the Label control instead has its `.Text` property set directly to `string.Empty`, since Labels don't have a `.Clear()` method of their own.
 
-**A variable** = a named storage location in memory
-Must be declared before use: DataType VariableName;
-Data types define what kind of data a variable can hold ("primitive" = basic, built-in types)
+The following screenshot shows the clearing code.
 
-**Naming rules**
-start with a letter or underscore, no spaces, no reserved keywords
-String variables hold text, assigned with double quotes: productDescription = "text";
+![Clearing Fields](Screenshots/Clear.png)
 
-Variables can be declared and used later in the same method
+## 2. exitButton_Click
 
-**Local variables**: belong only to the method they're declared in
+In this step, clicking the `exitButton` control runs code that closes the current form.
 
-Variables must be assigned a value before use, or the compiler throws an error
-Multiple variables of the same type can be declared in 
-one statement: string lastName, firstName, middleName;
+`this.Close();` closes the form the code is running in (in this case, `Form1`). `this` refers to the current form instance itself.
 
-### Numeric Data Types and Variables
+The following screenshot shows the close statement.
 
-**Three common numeric types**
-int — whole numbers
-double — real numbers with decimals
-decimal — real numbers, 
+![Closing the Form](Screenshots/Close.png)
 
-### Assignment compatibility rules
-int variables only accept int values
-double variables accept both int and double values
-decimal variables accept both int and decimal values
-double and decimal cannot mix directly
+## 3. Parsing the Student ID
 
-Explicit conversion (casting): (int)moneyNumber, (double)moneyNumber
+In this step, the text entered into `txtstudentid` is converted from a string into a numeric value so it can be used in calculations or comparisons.
 
-**var keyword**: compiler infers the type from the assigned value (type inference); only usable for local variables; must be initialized at declaration
+`int studentID = int.Parse(txtstudentid.Text);` reads the TextBox's `.Text` property (always a string) and converts it into an `int` using the `Parse` method, storing the result in a new variable named `studentID`.
 
-### Performing Calculations 
+If the TextBox contains anything other than a valid whole number, `int.Parse()` will throw an exception — this is why Parse calls are often wrapped in a `try-catch` block in a finished application.
 
-Math operators: + - * / % (modulus = remainder)
-Order of operations applies; use parentheses to control grouping
-Mixed-type calculations: int + double → result is double; int + decimal → result is decimal; double + decimal → not allowed
-Integer division: dividing two ints truncates the result (7 / 3 → 2)
-Fix: cast one operand to double before dividing, e.g., (double)x / y
+The following screenshot shows the parse method in use.
 
+![Parsing Student ID](Screenshots/Parse_Method.png)
