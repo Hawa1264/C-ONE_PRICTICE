@@ -1,7 +1,6 @@
 # Chapter 2 – Processing Data (C#)
 
-
-### Integer Division
+## Integer Division
 Integer division removes the decimal part.
 
 ```csharp
@@ -11,7 +10,7 @@ MessageBox.Show((x / y).ToString()); // 2
 
 Use `double` to get decimals: `7.0 / 3 = 2.3333`.
 
-### Numeric Input
+## Numeric Input
 Use `Parse()` to convert TextBox text into a number.
 
 ```csharp
@@ -20,14 +19,14 @@ double price = double.Parse(priceTextBox.Text);
 decimal salary = decimal.Parse(salaryTextBox.Text);
 ```
 
-###  Numeric Input Example
+### Numeric Input Example
 Read a value and convert it before calculating.
 
 ```csharp
 double distance = double.Parse(distanceTextBox.Text);
 ```
 
-### Displaying Numbers
+## Displaying Numbers
 Use `ToString()` to display numeric values.
 
 ```csharp
@@ -37,13 +36,13 @@ resultLabel.Text = number.ToString();
 
 **Remember:** `Parse()` = text to number; `ToString()` = value to text.
 
-###  Home Assignment
+## Home Assignment
 - Read input from TextBoxes.
 - Convert input using `Parse()`.
 - Calculate the result.
 - Display using `ToString()`.
 
-###  Number Formatting
+## Number Formatting
 
 | Format | Meaning |
 |---|---|
@@ -58,7 +57,7 @@ double amount = 12.3;
 amount.ToString("F2"); // 12.30
 ```
 
-###  Formatting Practice
+### Formatting Practice
 ```csharp
 double rate = 0.23;
 resultLabel.Text = rate.ToString("P"); // Percentage
@@ -66,10 +65,10 @@ resultLabel.Text = rate.ToString("P"); // Percentage
 
 Practice `"N"`, `"F2"`, `"C"`, and `"P"`.
 
-### Exceptions
+## Exceptions
 An exception is an error that occurs while a program runs, such as invalid numeric input.
 
-###  Try-Catch
+### Try-Catch
 Use `try-catch` to handle errors.
 
 ```csharp
@@ -95,11 +94,11 @@ double miles = double.Parse(milesTextBox.Text);
 
 Entering `"hello"` causes parsing to fail.
 
-###  Throwing vs. Catching
+### Throwing vs. Catching
 - **Throwing:** an exception is raised.
 - **Catching:** the program handles the exception.
 
-###  Exception Message
+### Exception Message
 Use `ex.Message` to get the exception's message.
 
 ```csharp
@@ -116,7 +115,7 @@ catch (Exception ex)
 ### Class Practice and Solution
 Practice reading input, converting values, calculating results, handling exceptions, and displaying output.
 
-###  Named Constants
+## Named Constants
 Use `const` for a value that cannot change.
 
 ```csharp
@@ -125,7 +124,7 @@ const double INTEREST_RATE = 0.129;
 
 **Exam point:** A constant cannot be reassigned.
 
-### Fields
+## Fields
 A field is declared inside a class but outside its methods.
 
 ```csharp
@@ -134,7 +133,7 @@ private string name = "Charles";
 
 Methods in the class can access it.
 
-###  FieldDemo
+### FieldDemo
 Multiple event handlers can change the same field.
 
 ```csharp
@@ -143,7 +142,7 @@ private string name = "Charles";
 
 Changing `name` in one handler affects its value for other handlers.
 
-###  Math Class
+## Math Class
 
 | Method | Purpose |
 |---|---|
@@ -155,22 +154,22 @@ Changing `name` in one handler affects its value for other handlers.
 | `Math.PI` | Pi constant |
 | `Math.E` | Euler's constant |
 
-###  Tab Order
+## Tab Order
 Tab order determines which control receives focus when the user presses Tab.
 
 `TabIndex` starts at `0`.
 
-###  Setting Tab Order
+### Setting Tab Order
 In Visual Studio, select **View → Tab Order**, then click controls in the desired order.
 
-###  Focus()
+## Focus()
 Use `Focus()` to move keyboard focus to a control.
 
 ```csharp
 nameTextBox.Focus();
 ```
 
-###  Access Keys
+## Access Keys
 Use `&` before a letter to create an access key.
 
 ```csharp
@@ -179,7 +178,7 @@ exitButton.Text = "E&xit";
 
 Press **Alt + X** to activate the button.
 
-###  Colors
+## Colors
 - `BackColor`: background color.
 - `ForeColor`: text color.
 
@@ -188,7 +187,7 @@ messageLabel.BackColor = Color.Black;
 messageLabel.ForeColor = Color.Yellow;
 ```
 
-### Background Images
+## Background Images
 `BackgroundImage` sets the form's image.
 
 | Layout | Purpose |
@@ -199,14 +198,16 @@ messageLabel.ForeColor = Color.Yellow;
 | Stretch | Fills the form; may distort |
 | Zoom | Fits proportionally |
 
-### GroupBox vs. Panel
+## GroupBox vs. Panel
 - **GroupBox:** container with a title and border.
 - **Panel:** container without a title; supports border styles.
 
-###  Logic Errors
+## Logic Errors
 A logic error occurs when a program runs but produces the wrong result.
 
 Examples: wrong calculation or wrong variable assignment.
+
+## Debugging
 
 ### Breakpoints
 A breakpoint pauses execution at a selected line so you can inspect values and find errors.
@@ -214,10 +215,10 @@ A breakpoint pauses execution at a selected line so you can inspect values and f
 ### Break Mode
 When execution pauses, hover over a variable to inspect its current value.
 
-###  Debugging
+### Debugging
 Pause the program and inspect its state to find the incorrect statement.
 
-###  Locals and Watch Windows
+### Locals and Watch Windows
 - **Locals:** shows local variables and their current values.
 - **Watch:** monitors selected variables or expressions.
 
@@ -225,7 +226,3 @@ Pause the program and inspect its state to find the incorrect statement.
 Run the program one statement at a time to find errors.
 
 Use **F11** or **Debug → Step Into**.
-
-
-
-
