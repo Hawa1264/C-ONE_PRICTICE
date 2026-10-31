@@ -1,7 +1,4 @@
 # Chapter 2 – Processing Data (C#)
-
-
-
 ## Integer Division
 When both numbers are integers, C# divides them and throws away the decimal part. For example, 7 / 3 gives 2, not 2.33. To keep the decimals, at least one of the numbers must be a `double`, so 7.0 / 3 gives 2.3333.
 
