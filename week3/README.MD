@@ -74,6 +74,7 @@ Placing `&` before a letter in a control's text (like `E&xit`) underlines that l
 
 ### Background Images
 The form's `BackgroundImage` property sets a picture, and the layout setting controls how it is shown:
+
 - **None:** original size, placed at the top-left.
 - **Tile:** repeats the image to fill the form.
 - **Center:** places the image in the middle at original size.
@@ -81,17 +82,21 @@ The form's `BackgroundImage` property sets a picture, and the layout setting con
 - **Zoom:** fits the form while keeping the correct proportions.
 
 ### GroupBox vs. Panel
+
 Both are containers that group other controls. A **GroupBox** has a title and a border. A **Panel** has no title but supports border styles and can scroll.
 
 ## Debugging
 
 ### Logic Errors
+
 A logic error is when the program runs without crashing but gives the wrong answer, for example using the wrong formula or assigning the wrong variable. The computer cannot detect these, so you must find them by testing.
 
 ### Breakpoints and Break Mode
+
 A breakpoint is a marker on a line of code. When the program reaches it, execution pauses (break mode). While paused, hover over a variable to see its current value and check whether it is what you expect.
 
 ### Locals and Watch Windows
+
 - **Locals:** automatically lists the local variables and their current values.
 - **Watch:** lets you pick specific variables or expressions to monitor as you step through.
 
