@@ -1,81 +1,138 @@
-# Chapter 3 – Making Decisions (Screenshots)
+# Discuss Chapter 4 screenshot
 
-## 1. Test Score Average with try-catch
-In this step, the program reads three test scores, calculates the average, and congratulates the user if the average is higher than the high score.
+This practice demonstrates how to:
 
-* `HIGH_SCORE` is a constant (95.0) that stores the limit and cannot be changed.
-* `test1`, `test2`, `test3`, and `average` are `double` variables.
-* `double.Parse()` converts the text in each TextBox to a number.
-* The average is calculated as `(test1 + test2 + test3) / 3.0`.
-* `average.ToString("n1")` displays the average in `averageLabel`.
+- Repeat code with the `while`, `for`, and `do-while` loops
+- Increase and decrease variables with `++` and `--`
+- Write data to a file and read it back
+- Let the user choose a file with the OpenFileDialog and SaveFileDialog controls
+- Generate random numbers
+- Run code when a form loads
 
-An `if` statement checks whether `average > HIGH_SCORE`. If it is true, a message box shows "Congratulations! Great job!"
-All of this code is inside a `try` block. If the user enters invalid text, the `catch (Exception ex)` block shows `ex.Message` in a message box.
-The following screenshot shows the try-catch with the if statement.
+---
 
-## 2. Nested if (Loan Qualification)
-In this step, one `if` statement is placed inside another `if` statement to test two conditions.
+## 1. The while Loop
 
-* The outer `if` checks whether `salary >= 40000`.
-* The inner `if` checks whether `yearsOnJob >= 2`. It runs only when the salary condition is true.
-* If both conditions are true, `decisionLabel.Text` shows "You qualify for the loan".
-* If the years condition fails, the label shows "Minimum years at current job not met."
-* If the salary condition fails, the outer `else` shows "Minimum salary requirement not met."
+In this step, a `while` loop repeats a block of code as long as its condition is true.
 
-The following screenshot shows the nested decision structure.
+- `count` starts at 0.
+- The condition `count < 5` is checked **before** every pass, so the `while` loop is a pretest loop.
+- Each pass shows a message box and adds 1 to `count`.
+- The loop stops when `count` reaches 5, so "Hello" is shown 5 times.
 
-## 3. if-else-if (Letter Grade)
-In this step, the test score is converted to a letter grade using an `if-else-if` chain.
+If the condition is false at the start (`count = 5`), the loop never runs.
+If `count` is never updated, the condition stays true forever and the loop becomes an infinite loop.
 
-* `int.Parse()` reads the score from `testScoreTextBox`.
-* A score of 90 or more gives "A", 80 or more gives "B", 70 or more gives "C", and 60 or more gives "D".
-* The final `else` gives "F" for any other score.
+The following screenshot shows the `while` loop examples.
 
-The first true condition runs and the rest are skipped.
-The following screenshot shows the if-else-if statement.
+![While Loop](Screenshots/While_Loop.png)
 
-## 4. Comparing Two Names
-In this step, two strings are compared to check whether they are equal.
+## 2. The Increment and Decrement Operators
 
-* `Name1.CompareTo(Name2) == 0` is true when both names are the same.
-* A negative result means `Name1` comes before `Name2` alphabetically.
-* A positive result means `Name1` comes after `Name2`.
+In this step, `++` adds 1 to a variable and `--` subtracts 1 from it.
 
-The following screenshot shows the string comparison inside an `if` statement.
+- `count++` does the same thing as `count += 1` and `count = count + 1`.
+- `count--` does the same thing as `count -= 1` and `count = count - 1`.
 
-## 5. Counting ListBox Items
-In this step, the number of items in a list box is counted and displayed.
+The operators can be used in two modes:
 
-* `listBox1.Items.Count` returns the number of items in the list box.
-* The value is stored in the `int` variable `count_listbox`.
-* `MessageBox.Show()` joins the text "Total items is :" and the number using the `+` operator.
+- Postfix (`x = count++`) uses the old value first, then changes the variable. Here `x` is 5 and `count` is 6.
+- Prefix (`x = ++count`) changes the variable first, then uses the new value. Here `count` goes from 6 to 7, so `x` is 7.
 
-The following screenshot shows how the item count is displayed.
+The following screenshot shows the increment and decrement examples.
 
-## 6. Selected Text in a ListBox
-In this step, the item selected by the user in the list box is displayed.
+![Increment and Decrement](Screenshots/Increment_Decrement.png)
 
-* `listBox1.Text` holds the text of the selected item.
-* The text is stored in the string variable `selectedtext`.
-* `MessageBox.Show()` displays "your selected" followed by that text.
+## 3. The for Loop
 
-The following screenshot shows how the selected text is displayed.
+In this step, a `for` loop puts the start value, the test, and the update in one line.
 
-## 7. Simple if-else (Temperature)
-In this step, the program shows a message depending on the temperature.
+A `for` loop has three parts: `for (InitializationExpression; TestExpression; UpdateExpression)`.
 
-* `Temp` is set to 90.
-* The condition `Temp > 40` is true, so the `if` block runs and shows "hot".
-* The `else` block runs only when the condition is false.
+- `for (int count = 0; count < 5; count++)` shows "Hello" 5 times. The variable `count` is declared inside the loop.
+- `for (count = 0; count < 5; count++)` does the same, but `count` is declared before the loop.
+- `count += 10` makes the loop count by tens: 0, 10, 20 ... 100.
+- `count--` makes the loop count backward: 10, 9, 8 ... 0.
 
-The following screenshot shows the if-else statement.
+The following screenshot shows the `for` loop examples.
 
-## 8. bool Flag (Grand Master)
-In this step, a `bool` variable is used as a flag to record whether a player is a grand master.
+![For Loop](Screenshots/For_Loop.png)
 
-* `points` stores the points read from `txtPoints` using `double.Parse()`.
-* `isGrandMaster` is a `bool` flag.
-* If `points > 5000`, the flag is set to `true`. Otherwise, it is set to `false`.
-* `isGrandMaster.ToString()` converts the flag to "True" or "False" so `lblResult` can display it.
+## 4. The do-while Loop
 
-The following screenshot shows the flag being set and displayed.
+In this step, a `do-while` loop checks its condition **after** the body, so the body always runs at least once.
+
+- `number` is set to 1.
+- The message box shows `1`.
+- The condition `number < 0` is then checked. It is false, so the loop stops.
+
+The same code written as a `while` loop shows nothing, because the condition is checked first.
+
+The following screenshot shows the `do-while` loop example.
+
+![Do While Loop](Screenshots/Do_While_Loop.png)
+
+## 5. Using Files for Data Storage
+
+In this step, data is written to a text file and read back.
+
+### Writing to a file
+
+- `StreamWriter` is the object that writes text to a file.
+- `File.CreateText("courses.txt")` creates a new file. If the file already exists, it is overwritten.
+- `File.AppendText("Names.txt")` adds new lines to the end of an existing file.
+- `WriteLine(...)` writes one line of text.
+- `Close()` closes the file so the data is saved.
+
+### Specifying the file location
+
+A path can be given instead of a file name. The `@` symbol is placed before the string so the backslashes are treated as normal characters: `@"C:\Data\Names.txt"`.
+
+### Reading from a file
+
+- `StreamReader` is the object that reads text from a file.
+- `File.OpenText("students.txt")` opens an existing file.
+- `while (!inputFile.EndOfStream)` repeats until the end of the file is reached. It is the same as `inputFile.EndOfStream == false`.
+
+The following screenshot shows the file examples.
+
+![Files](Screenshots/Files.png)
+
+## 6. The OpenFileDialog and SaveFileDialog Controls
+
+In this step, the user chooses a file with a dialog box instead of typing its name.
+
+- `openFileDialog.ShowDialog()` shows the Open dialog when the button is clicked.
+- `ShowDialog()` returns a `DialogResult`. It is `DialogResult.OK` when the user clicks Open and `DialogResult.Cancel` when the user cancels.
+- `openFileDialog.FileName` holds the file the user selected, so it can be passed to `File.OpenText`.
+- `openFileDialog.InitialDirectory` sets the folder the dialog starts in.
+- `saveFileDialog.ShowDialog()` shows the Save As dialog. If the user clicks OK, `File.CreateText(saveFileDialog.FileName)` creates the file.
+
+The following screenshot shows the dialog examples.
+
+![File Dialogs](Screenshots/File_Dialogs.png)
+
+## 7. Random Numbers
+
+In this step, the `Random` class is used to create random numbers.
+
+- `new Random()` creates the random number generator.
+- `rand.Next()` returns a random integer.
+- `rand.NextDouble()` returns a random decimal number from 0.0 up to (but not including) 1.0.
+- `rand.Next(100)` returns a random integer from 0 to 99.
+
+The following screenshot shows the random number examples.
+
+![Random Numbers](Screenshots/Random_Numbers.png)
+
+## 8. The Load Event
+
+In this step, the `Form1_Load` event handler runs when the form is loaded into memory.
+
+- Double-clicking the form in the Designer creates an empty `Load` event handler.
+- Code placed inside it runs before the form appears.
+- In the example, `MessageBox.Show("Prepare to see the form!");` displays a message first.
+
+The following screenshot shows the Load event handler.
+
+![Load Event](Screenshots/Load_Event.png)

@@ -1,457 +1,150 @@
-# Making Decisions
+# Chapter 4: Loops, Files, and Random Numbers
 
-#chapter three#
+Study guide based on the Chapter 4 slides of *Starting Out with Visual C#* (Gaddis, Sixth Edition, Global Edition). It is written in plain language, with no code blocks. Note that the slides are titled Chapter 4 but number their sections 5.1 to 5.9, so the section numbers below follow the slides.
+
+---
 
 ## Topics Covered
 
-- 4.1 Decision Structures and the if Statement
-- 4.2 The if-else Statement
-- 4.3 Nested Decision Structures
-- 4.4 Logical Operators
-- 4.5 bool Variables and Flags
-- 4.6 Comparing Strings
-- 4.7 Preventing Data Conversion Exceptions with the TryParse Method
-- 4.8 Input Validation
-- 4.9 Radio Buttons and Check Boxes
-- 4.10 The switch Statement
-- 4.11 Introduction to List Boxes
+1. The while loop
+2. The increment and decrement operators
+3. The for loop
+4. The do-while loop
+5. Using files for data storage
+6. The OpenFileDialog and SaveFileDialog controls
+7. Random numbers
+8. The Load event
 
-## 4.1 Decision Structures and the if Statement
-
-A **control structure** is a logical design that controls the order in which statements execute.
-
-A **sequence structure** is a set of statements that execute in the order that they appear.
-
-A **decision structure** executes statements only under certain circumstances. A specific action is performed only if a certain condition exists. It is also known as a **selection structure**.
-
-## A Simple Decision Structure
-
-A **single-alternative decision structure** provides only one alternative path of execution.
-
-In C#, the `if` statement is used to write such structures.
-
-Generic format:
-
-```csharp
-if (expression)
-{
-    statement;
-    statement;
-    etc.
-}
-```
-
-The expression is a **Boolean expression** that can be evaluated as either true or false.
-
-## Relational Operators
-
-A **relational operator** determines whether a specific relationship exists between two values.
-
-| Operator | Meaning | Expression | Question |
-|----------|---------|------------|----------|
-| `>` | Greater than | `x > y` | Is x greater than y? |
-| `<` | Less than | `x < y` | Is x less than y? |
-| `>=` | Greater than or equal to | `x >= y` | Is x greater than or equal to y? |
-| `<=` | Less than or equal to | `x <= y` | Is x less than or equal to y? |
-| `==` | Equal to | `x == y` | Is x equal to y? |
-| `!=` | Not equal to | `x != y` | Is x not equal to y? |
-
-## An if Statement with a Boolean Expression
-
-```csharp
-if (sales > 50000)
-{
-    bonus = 500;
-}
-```
-
-## 4.2 The if-else Statement
-
-An **if-else statement** executes one block of statements if its Boolean expression is true, or another block if its Boolean expression is false.
-
-It has two parts: an **if clause** and an **else clause**.
-
-Generic format:
-
-```csharp
-if (expression)
-{
-    statements
-}
-else
-{
-    statements
-}
-```
-
-## 4.3 Nested Decision Structures
-
-A **nested decision structure** is a decision structure inside another one. It is used to test more than one condition.
-
-Nested means "one inside another".
-
-```csharp
-if (expression)
-{
-    if (expression)
-    {
-        statements
-    }
-    else
-    {
-        statements
-    }
-}
-else
-{
-    statements
-}
-```
+---
+
+## 1. The while Loop
 
-## The if-else-if Statement
+- A while loop repeats a statement or a set of statements as long as a Boolean expression is true.
+- It has two parts: the Boolean expression that is tested, and the body, which is the statements inside the curly braces.
+- The first line is called the while clause.
+- Each pass through the body is called an iteration.
+- A counter variable is a variable used to track how many times a loop runs.
+
+### Pretest loop
+- A while loop tests its condition before each iteration.
+- Because of this, you usually need to set things up before the loop so it runs at least once. For example, a counter starting at 0 with a test of "less than 5" runs 5 times.
+- If the condition is false from the start, the loop never runs.
 
-The **if-else-if** statement evaluates multiple conditions to make the final decision.
+### Infinite loops
+- An infinite loop repeats until the program is interrupted.
+- The usual cause is forgetting to change something in the body that eventually makes the condition false, such as never increasing the counter.
 
-Generic format:
-
-```csharp
-if (expression)
-{
-    statements
-}
-else if (expression)
-{
-    statements
-}
-else if (expression)
-{
-    statements
-}
-else
-{
-    statements
-}
-```
+---
 
-## 4.4 Logical Operators
+## 2. The Increment and Decrement Operators
 
-**Logical operators** connect multiple Boolean expressions to create a compound expression.
+- To increment means to increase a variable's value, and to decrement means to decrease it.
+- C# provides the ++ and -- operators for this.
+- Adding 1 can be done three ways: with ++, with += 1, or by writing the variable equals itself plus 1. Subtracting 1 works the same way with --, -= 1, or equals itself minus 1.
 
-| Operator | Meaning | Description |
-|----------|---------|-------------|
-| `&&` | AND | Both subexpressions must be true for the compound expression to be true |
-| `\|\|` | OR | One or both subexpressions must be true for the compound expression to be true |
-| `!` | NOT | Reverses the value of a Boolean expression |
+### Postfix versus prefix
+- Postfix means the operator goes after the variable. The old value is used first, then the variable changes.
+- Prefix means the operator goes before the variable. The variable changes first, then the new value is used.
 
-| Expression | Meaning |
-|------------|---------|
-| `x > y && a < b` | Is x greater than y AND is a less than b? |
-| `x == y \|\| x == z` | Is x equal to y OR is x equal to z? |
-| `!(x > y)` | Is the expression x > y NOT true? |
+---
 
-## Sample Decision Structures with Logical Operators
+## 3. The for Loop
 
-**The && operator**
+- The for loop is designed for situations that need a counter variable to control how many times the loop runs.
+- It has three parts:
+  - **Initialization:** a one-time step that sets the starting value of the counter.
+  - **Test:** a Boolean expression; if true, the loop iterates.
+  - **Update:** a step that increases or decreases the counter.
+- Like the while loop, the for loop is a pretest loop.
+- The counter can be declared inside the initialization part or before the loop.
+- The update does not have to add 1. It can count by tens, or count backward by decrementing.
 
-```csharp
-if (temperature < 20 && minutes > 12)
-{
-    MessageBox.Show("The temperature is in the danger zone.");
-}
-```
+---
 
-**The || operator**
+## 4. The do-while Loop
 
-```csharp
-if (temperature < 20 || temperature > 100)
-{
-    MessageBox.Show("The temperature is in the danger zone.");
-}
-```
+- The do-while loop is a posttest loop: it runs the body once and only then tests the Boolean expression.
+- This means the body always runs at least once, even if the condition is false from the start.
+- A matching while loop with the same false condition would not run at all. That difference is the key point to remember.
 
-**The ! operator**
+### Loop comparison
 
-```csharp
-if (!(temperature > 100))
-{
-    MessageBox.Show("The temperature is below the maximum.");
-}
-```
+| Loop | Type | Minimum runs | Best used when |
+|------|------|--------------|----------------|
+| while | Pretest | 0 | The number of repeats is not known in advance 
+| for   | Pretest | 0 | You need a counter and know how many repeats 
+|do-while|Posttest | 1 | The body must run at least once 
 
-## 4.5 bool Variables and Flags
+---
 
-A `bool` variable can store the value `true` or `false`.
+## 5. Using Files for Data Storage
 
-`bool` variables are commonly used as **flags**. A flag is a variable that signals when some condition exists in the program.
+- Programs save data in files for later use.
+- There are always three steps: **open** the file, **process** it (write to it or read from it), and **close** it.
+- There are two kinds of files: text files, which store data encoded as text such as Unicode, and binary files, which store data that is not text and cannot be viewed in a text editor. This chapter only deals with text files.
+- A file object is tied to one specific file and lets the program work with it.
+- .NET provides two classes: **StreamWriter** for writing to a text file and **StreamReader** for reading from one.
 
-- `false`: the condition does not exist.
-- `true`: the condition exists.
+### Writing to a file
+1. Create a StreamWriter variable.
+2. Open the file with a File method:
+   - **CreateText** creates the file. If it already exists, its contents are erased.
+   - **AppendText** opens the file and adds to the end without erasing what is there.
+3. Write data with **WriteLine** (writes the item and then a newline, ending the line) or **Write** (writes the item with no newline).
+4. Close the file.
 
-## 4.6 Comparing Strings
+### File paths
+- To use a file in another location, give a full path along with the file name.
+- Put the @ character before the path string so backslashes are read correctly.
 
-Relational operators and methods can be used to compare strings.
+### Reading from a file
+1. Create a StreamReader variable.
+2. Open the file with **File.OpenText**.
+3. Read data with one of these:
+   - **ReadLine** reads one line and returns it as a string.
+   - **Read** reads the next character or set of characters.
+   - **ReadToEnd** and **File.ReadAllText** read the whole file at once (the slides list these without further detail).
+4. Close the file.
 
-The `==` operator can compare two strings:
+### Reading a whole file with a loop
+- A StreamReader has a Boolean property called **EndOfStream** that tells you whether the end of the file has been reached.
+- You can loop while EndOfStream is false (or, written another way, while it is not true) to read every line.
 
-```csharp
-if (name1 == name2)
-{
-}
-```
+---
 
-A string variable can be compared with a string literal:
+## 6. The OpenFileDialog and SaveFileDialog Controls
 
-```csharp
-if (name1 != "bob")
-{
-}
-```
+- These controls show the standard Windows Open and Save As dialog boxes.
+- They are invisible controls. When added to a form, they appear in the component tray at the bottom of the Designer, not on the form itself.
 
-The `String.Compare` method can also compare two strings:
+### Showing and checking the dialog
+- Call the **ShowDialog** method to display the dialog box.
+- ShowDialog returns a **DialogResult** value telling you which button the user clicked: **OK** if they clicked Open (or Save), and **Cancel** if they cancelled.
+- Check this result with an if statement before doing anything with the file.
 
-```csharp
-if (String.Compare(name1, name2) == 0)
-{
-}
-```
+### Useful properties
+- **FileName** holds the path and file name the user selected. Use it to open the chosen file.
+- **InitialDirectory** sets which folder is shown first when the dialog opens.
 
-## 4.7 Preventing Data Conversion Exceptions with the TryParse Method
+### Save As dialog
+- SaveFileDialog works the same way: show it, check for OK, then use the selected file name to create the output file.
 
-Exceptions should be prevented when possible.
+---
 
-The **TryParse** methods prevent exceptions caused by users entering invalid data:
+## 7. Random Numbers
 
-- `int.TryParse`
-- `double.TryParse`
-- `decimal.TryParse`
+- .NET provides the **Random** class for generating random numbers.
+- First create a Random object, then call its methods:
+  - **Next** produces a random integer.
+  - **NextDouble** produces a random floating-point number from 0.0 up to (but not including) 1.0.
+- With no argument, Next gives a number from 0 up to 2,147,483,647.
+- To get a number from 0 up to a chosen maximum, pass the maximum plus 1 as the argument. For example, passing 100 gives a number from 0 to 99.
 
-Generic syntax:
+---
 
-```csharp
-dataType.TryParse(string input, out targetVariable)
-```
+## 8. The Load Event
 
-The `out` keyword is required. It specifies that `targetVariable` is an output variable.
+- When an application runs, its form is loaded into memory and a **Load** event takes place.
+- To create a Load event handler, double-click the form in the Designer.
+- Any code placed in the Load event runs when the form is launched, for example showing a message box as the form opens.
 
-**Example**
-
-```csharp
-int hours;
-if (int.TryParse(textBox1.Text, out hours))
-{
-    // TryParse succeeded, so the input is a number
-}
-```
-
-## 4.8 Input Validation
-
-**Input validation** is the process of inspecting data entered into a program to make sure it is valid before it is used.
-
-TryParse checks whether the data can be converted, but it does not check the integrity of the data.
-
-**Examples**
-
-Payroll program, validating hours worked:
-
-```csharp
-if (hours > 0 && hours <= 168)
-```
-
-Test scores program, validating the score range of 0 through 100:
-
-```csharp
-if (testScore >= 0 && testScore <= 100)
-```
-
-## 4.9 Radio Buttons and Check Boxes
-
-**Radio buttons** allow users to select one choice from several possible choices. Clicking a radio button automatically deselects the others. This is called **mutually exclusive selection**.
-
-**Check boxes** allow users to select multiple options.
-
-## RadioButton Control
-
-A **RadioButton** control creates a group of radio buttons.
-
-Common properties:
-
-**Text**: the text displayed next to the radio button.
-
-**Checked**: a Boolean property that determines whether the control is selected or deselected.
-
-**Example**
-
-```csharp
-if (choiceRadioButton.Checked)
-{
-}
-else
-{
-}
-```
-
-The `==` operator is not needed, but this is equivalent:
-
-```csharp
-if (choiceRadioButton.Checked == true)
-{
-}
-else
-{
-}
-```
-
-## CheckBox Control
-
-A **CheckBox** control gives the user an option, such as true/false or yes/no.
-
-It has the same common properties as RadioButton: **Text** and **Checked**.
-
-**Example**
-
-```csharp
-if (option1CheckBox.Checked)
-{
-}
-else
-{
-}
-```
-
-## The CheckedChanged Event
-
-Whenever the `Checked` property of a radio button or check box changes, a **CheckedChanged** event is raised.
-
-A CheckedChanged event handler can be written to respond to the event. Double-click the control in the Designer to create an empty handler:
-
-```csharp
-private void yellowRadioButton_CheckedChanged(object sender, EventArgs e)
-{
-}
-```
-
-## 4.10 The switch Statement
-
-The **switch statement** lets the value of a variable or an expression determine which path of execution the program takes.
-
-It is a **multiple-alternative decision structure**, and can be used as an alternative to an if-else-if statement that tests the same variable or expression for several different values.
-
-```csharp
-switch (testExpression)
-{
-    case value_1:
-        statement;
-        break;
-    case value_2:
-        statement;
-        break;
-    default:
-        statement;
-        break;
-}
-```
-
-## General Format of the switch Statement
-
-`testExpression` is a variable or expression with an `int`, `string`, or `bool` value.
-
-Each **case** is an individual subsection containing one or more statements, followed by a `break` statement.
-
-The **default** section is optional. It is used when `testExpression` does not match any of the cases.
-
-## 4.11 Introduction to List Boxes
-
-A **ListBox** control displays a list of items and allows the user to select an item from the list.
-
-Common properties:
-
-**Text**: the text of the currently selected item.
-
-**Items**: the items of the ListBox.
-
-**Items.Count**: the number of items in the ListBox.
-
-**SelectedItem**: gets or sets the currently selected item.
-
-**SelectedIndex**: gets or sets the zero-based index of the currently selected item.
-
-**Example**
-
-```csharp
-selectedFruit = fruitListBox.SelectedItem.ToString();
-```
-
-## Adding Items to a ListBox
-
-The `Items.Add` method adds an item to the ListBox.
-
-```csharp
-ListBox.Items.Add(NewItem);
-```
-
-**Example**
-
-```csharp
-daysListBox.Items.Add("Monday");
-daysListBox.Items.Add("Tuesday");
-daysListBox.Items.Add("Wednesday");
-```
-
-## SelectedItem and SelectedIndex
-
-An exception occurs if you get the value of `SelectedItem` when no item is selected.
-
-Items in a list box are indexed starting at 0. The first item has index 0, and the nth item has index n - 1.
-
-If no item is selected, `SelectedIndex` is -1.
-
-**Example**: make sure an item is selected before getting `SelectedItem`.
-
-```csharp
-if (fruitListBox.SelectedIndex != -1)
-{
-}
-```
-
-## Difference Between Text and SelectedItem
-
-| Property | Type | Best Use For |
-|----------|------|--------------|
-| `Text` | string | Quick access to the selected text; simple lists with text only |
-| `SelectedItem` | object | Full access to the selected item; real or data-bound lists (for example Student or Book objects) |
-
-`Text` might return `""` if nothing is selected. `SelectedItem` might be `null` if nothing is selected.
-
-## Removing Items from a ListBox
-
-The `Items.Remove` method removes a specific item.
-
-```csharp
-ListBox.Items.Remove(Item);
-```
-
-**Example**
-
-```csharp
-daysListBox.Items.Remove("Tuesday");
-```
-
-The `Items.RemoveAt` method removes the item at a specific index.
-
-```csharp
-ListBox.Items.RemoveAt(Index);
-```
-
-**Example**
-
-```csharp
-daysListBox.Items.RemoveAt(2);
-```
-
-The index must be valid: not less than 0, and not greater than or equal to the number of items. An invalid index makes `RemoveAt` throw an exception.
-
-The `Items.Clear` method erases all the items in the ListBox.
-
-```csharp
-daysListBox.Items.Clear();
-```
